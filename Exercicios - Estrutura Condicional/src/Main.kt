@@ -70,8 +70,8 @@ fun main() {
     println(" ========== EX3 ========== ")
 
     println("Digite dois números para realizar uma operação: ")
-    val n1 = readLine()?.toIntOrNull();
-    val n2 = readLine()?.toIntOrNull();
+    val n1 = readLine()?.toDoubleOrNull();
+    val n2 = readLine()?.toDoubleOrNull();
 
     if (n1 == null || n2 == null){
         println("Um dos números digitados é inválido")
@@ -90,7 +90,11 @@ fun main() {
             when (operacao) {
                 1 -> println("A soma entre os números é: ${n1 + n2}")
                 2 -> println("A subtração entre os números é: ${n1 - n2}")
-                3 -> println("A divisão entre os números é: ${n1 / n2}")
+                3 -> if (n1 == 0.0 || n2 == 0.0) {
+                        println("Não é possível dividir por 0.")
+                    } else {
+                        println("A divisão entre os números é: ${n1 / n2}")
+                    }
                 4 -> println("A multiplicação entre os números é: ${n1 * n2}")
             }
 
