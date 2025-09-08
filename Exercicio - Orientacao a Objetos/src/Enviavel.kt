@@ -1,0 +1,5 @@
+interface Enviavel {
+
+    fun enviarPorEmail()
+
+}
